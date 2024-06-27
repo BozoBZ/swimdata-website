@@ -10,6 +10,7 @@ def hello_swimdata():
 
 @app.route("/api/athletes")
 def list_athletes():
+    athletes = load_athletes_from_db()
     return jsonify(athletes)
 
 if __name__ == "__main__":
