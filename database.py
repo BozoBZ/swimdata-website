@@ -1,16 +1,9 @@
 from sqlalchemy import create_engine, text
-import urllib.parse
+import os
 
-user_name = "avnadmin"
-host="swimdata-mysql-swimdata.h.aivencloud.com:25477"
-database = "swimdata_test1"
-password = "AVNS_Nbl8nVYZdZTTu1AuXJj" 
+db_connection_string = os.environ['DB_CONNECTION_STRING']
 
-encoded_password = urllib.parse.quote_plus(password)
-
-connection_string = f"mysql+pymysql://{user_name}:{encoded_password}@{host}/{database}"
-
-engine = create_engine(connection_string)
+engine = create_engine(db_connection_string)
 
 def load_athletes_from_db():
     with engine.connect() as conn:
