@@ -16,7 +16,9 @@ def list_athletes():
 @app.route("/athlete/<id_athlete>")
 def show_athlete(id_athlete):
     athlete = load_athlete_from_db(id_athlete)
-    return jsonify(athlete)
+    if not athlete:
+        return "Not found", 404
+    return render_template("athletepage.html", athlete=athlete)
     
 if __name__ == "__main__":
   app.run(host='0.0.0.0', debug=True)
