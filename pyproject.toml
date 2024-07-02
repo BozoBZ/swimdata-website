@@ -10,6 +10,7 @@ packages = [{include = "repl_nix_swimdata_website"}]
 python = "^3.10"
 flask = "^3.0.3"
 sqlalchemy = "^2.0.31"
+werkzeug = "^3.0.3"
 
 
 [build-system]

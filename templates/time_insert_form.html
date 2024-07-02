@@ -1,0 +1,43 @@
+<h4>Time insert form</h4>
+<form action="/athlete/{{athlete['idAthlete']}}/time" method="post">
+  <div class="mb-2">
+    <label>Meet</label><br>
+    <select name="meet" id="meet">
+      <option value="1">Meilemer Meeting</option>
+      <option value="2">Clubi</option>
+      <option value="3">Kids Liga</option>
+    </select>
+  </div>
+  
+  <div class="mb-2">
+    <label>Swim event</label><br>
+    <select name="swimevent" id="swimevent">
+      <option value="00">50 CR</option>
+      <option value="01">100 CR</option>
+      <option value="02">200 CR</option>
+      <option value="04">400 CR</option>
+      <option value="08">800 CR</option>
+      <option value="15">1500 CR</option>
+    </select>
+  </div>
+
+  <div class="mb-2">
+    <label>
+      <label>Swim Time</label><br>
+      <input type="text" name="swimtime" placeholder="swimtime">
+    </label>
+  </div>
+
+  <div class="mb-2">
+    <label>Swim Type</label><br>
+    <select name="swimtype" id="swimtype">
+      <option value="1">Direkter Endlauf</option>
+      <option value="2">Vorlauf</option>
+      <option value="3">Semifinale</option>
+      <option value="4">Finale</option>
+      <option value="5">First leg</option>
+    </select>
+  </div>
+  
+  <input type="submit">
+</form>
