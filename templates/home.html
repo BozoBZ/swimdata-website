@@ -9,34 +9,36 @@
     {% include 'nav.html' %}
     {% include 'banner.html' %}
     <div class="container">
-     <h1 class="text-center mt-2 mb-4">
-      Swim Data Athlets
-    </h1>
+      <h1 class="text-center mt-2 mb-4">
+        Swim Data Athletes
+      </h1>
+    
       <div class="row">
         <div class="col-md-6">  
-        <p class="lead">
-             Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero
-        </p>
+          <p class="lead">
+            <a href="/athletes" 
+              type="button"
+              class="btn btn-outline-primary float-right align-middle">
+              Athletes
+            </a>
+            <a href="/times" 
+              type="button"
+              class="btn btn-outline-info float-right align-middle">
+              Times
+            </a>             
+          </p>
         </div>
         <div class="d-none d-md-block col-md-6">  
-        <img class="img-fluid" id="banner" src="/static/swimmer.jpg">
-          </div>
+          <img class="img-fluid" id="banner" src="/static/swimmer.jpg">
+        </div>
       </div>
-    
-      <h2 class="text-center mt-2 mb-4">
-      The Athletes
-    </h2>
-    <p>
-      {% for athlet in athletes %}
-        {%include 'athletitem.html' %}
-      {% endfor %}
-    </p>
+      
       <div class="text-center">
-    <button class="btn btn-primary btn-large">
-      Contact us
-    </button>
+        <button class="btn btn-primary btn-large">
+          Contact us
+        </button>
       </div>
-      </div>
+    </div>
     {% include 'footer.html' %}
   </body>
 </html>
