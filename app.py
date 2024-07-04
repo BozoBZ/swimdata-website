@@ -29,14 +29,11 @@ def list_times_tables():
     times = load_times_from_db()
     return render_template ("times.html", times=times)
 
-@app.route("/athletes/<idAthlete>/time", methods = ['POST'])
-def insert_time_into_db(idAthlete):
+@app.route("/times", methods = ['POST'])
+def insert_time_into_db():
     data = request.form
-    athlete = load_athlete_from_db(idAthlete)
-    add_time_into_db(idAthlete, data)
-    
-    return render_template("time_submitted.html",                                                  application=data,
-                            athlete=athlete)
+    add_time_into_db(data)
+    return render_template("times.html",                                                        data=data)
 
 if __name__ == "__main__":
   app.run(host='0.0.0.0', debug=True)
