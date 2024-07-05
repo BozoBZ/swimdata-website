@@ -2,6 +2,12 @@ from flask import Flask, render_template, jsonify, request
 from database import load_athletes_from_db, load_athlete_from_db, add_time_into_db, load_times_from_db
 
 app = Flask(__name__)
+
+def format_swimtime(swimtime):
+    if swimtime is None:
+        return None
+    else:
+        return swimtime[0:1]+":"+swimtime[2:3]+"."+swimtime[4:5]     
        
 @app.route("/")
 def hello_swimdata():
@@ -33,7 +39,7 @@ def list_times_tables():
 def insert_time_into_db():
     data = request.form
     add_time_into_db(data)
-    return render_template("times.html",                                                        data=data)
+    return render_template("time_submitted.html", data=data)
 
 if __name__ == "__main__":
   app.run(host='0.0.0.0', debug=True)

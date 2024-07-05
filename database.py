@@ -39,7 +39,7 @@ def add_time_into_db(data):
                         "swimevent" :data['swimevent'],
                         "idAthlete" :data['idAthlete'],
                         "idMeet" :data['meet'],
-                        "swimtime" :data['swimtime'],                                                    "swimtype" :data['swimtype']
+                        "swimtime" :data['swimtime'],                          "swimtype" :data['swimtype']
                      })  
         
         conn.commit()
